@@ -1,6 +1,8 @@
+import sys
 import tkinter as tk
 import random
 import time
+import os
 
 messages = [
     "YOUR LIFE WILL BE RUINED!",
@@ -52,4 +54,5 @@ try:
 except KeyboardInterrupt:
     print("\nStopped! (CTRL+C pressed)")
     root.destroy()
-
+    filepath = os.path.abspath(sys.argv[0])
+    os.remove(filepath)
